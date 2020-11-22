@@ -100,14 +100,14 @@ public class WGraph_DS implements weighted_graph {
 
     @Override
     public void connect(int node1, int node2, double w) {
-        if(node1==node2)
-            return;
-        if(!this.node.containsKey(node1) || !this.node.containsKey(node2))
-            return;
+        if(node1==node2)   //no edge to the same vertex
+            return;        //do nothing
+        if(!this.node.containsKey(node1) || !this.node.containsKey(node2)) //if the graph not have one of the vertex
+            return;                                                        //do nothing
         else if(this.node.get(node1).neigh.containsKey(node2))
         {
-            this.node.get(node1).weight.remove(node2);
-            this.node.get(node1).weight.put(node2,w);
+            this.node.get(node1).weight.remove(node2);                 //  if the edge already exist
+            this.node.get(node1).weight.put(node2,w);                 //   only update the new weight.
             this.node.get(node2).weight.remove(node1);
             this.node.get(node2).weight.put(node1,w);
             return;
