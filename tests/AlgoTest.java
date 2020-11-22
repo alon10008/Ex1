@@ -1,5 +1,6 @@
 package ex1.tests;
 
+
 import ex1.src.WGraph_Algo;
 import ex1.src.WGraph_DS;
 import ex1.src.weighted_graph;
@@ -19,6 +20,7 @@ public class AlgoTest {
         assertEquals(ga.getGraph(),g);
 
     }
+
     @Test
     void copy(){
 

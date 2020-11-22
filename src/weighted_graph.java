@@ -9,6 +9,7 @@ import java.util.Collection;
  * (should NOT be based on a n*n matrix).
  *
  */
+
 public interface weighted_graph {
     /**
      * return the node_data by the node_id,

@@ -60,6 +60,7 @@ public class WGraph_DS implements weighted_graph {
                 return 1;
         }
     } ///////////-----end class NodeInfo-----///////////
+
     public WGraph_DS()
     {
         this.node = new HashMap<Integer,NodeInfo>();

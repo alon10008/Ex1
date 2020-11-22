@@ -1,5 +1,6 @@
 package ex1.src;
 
+
 public interface node_info {
     /**
      * Return the key (id) associated with this node.
