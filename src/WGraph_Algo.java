@@ -192,18 +192,18 @@ public class WGraph_Algo implements weighted_graph_algorithms {
     public boolean save(String file) {
         if(this.wg==null)
             return true;
-        Object[] arr = this.wg.node.keySet().toArray();
-        try
-        {
-            FileWriter fw = new FileWriter(file);
-            PrintWriter pw = new PrintWriter(fw);
-            for(int i=0 ; i<arr.length ; i++)
-                pw.println(this.wg.node.get((int)arr[i]).getInfo());
-            pw.close();
-            fw.close();
-        }
-        catch(IOException e)
-        {
+        Object[] arr = this.wg.node.keySet().toArray();                    ////
+        try                                                               //// save String that represent the graph:
+        {                                                                ////  key1|v1-w1/v2-w2/........./vn-wn/
+            FileWriter fw = new FileWriter(file);                       ////   key2|v1-w1/v2-w2/........./vn-wn/
+            PrintWriter pw = new PrintWriter(fw);                      ////    .
+            for(int i=0 ; i<arr.length ; i++)                         ////     .
+                pw.println(this.wg.node.get((int)arr[i]).getInfo()); ////      .
+            pw.close();                                             ////       .
+            fw.close();                                            ////        keym|v1-w1/v2-w2/........./vn-wn/
+        }                                                         ////
+        catch(IOException e)                                     ////          every row represent a vertex in the graph...m vertices,n neighbor
+        {                                                       ////           key is the vertex key, v is neighbor and w is the weight
             System.out.println("IOException, Graph was not saved!");
             return false;
         }
